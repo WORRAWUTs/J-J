@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>เพิ่มข้อมูล Inventory</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="mb-4">เพิ่มข้อมูล Inventory</h1>
+        
+        <div id="alert-container"></div>
+        
+        <form id="inventoryForm">
+            <div class="mb-3">
+                <label for="type" class="form-label">ประเภท</label>
+                <select class="form-select" id="type" required>
+                    <option value="HDD">HDD</option>
+                    <option value="RAM">RAM</option>
+                    <option value="Switch">Switch</option>
+                    <option value="Server">Server</option>
+                    <option value="Storage">Storage</option>
+                    <option value="Other Module">Other Module</option>
+                </select>
+            </div>
+            
+            <div class="mb-3">
+                <label for="name_product" class="form-label">ชื่อสินค้า</label>
+                <input type="text" class="form-control" id="name_product" required>
+            </div>
+            
+            <div class="mb-3">
+                <label for="part_number" class="form-label">หมายเลขพาร์ท</label>
+                <input type="text" class="form-control" id="part_number" required>
+            </div>
+            
+            <div class="mb-3">
+                <label for="serial_number" class="form-label">หมายเลขซีเรียล</label>
+                <input type="text" class="form-control" id="serial_number" required>
+            </div>
+            
+            <div class="mb-3">
+                <label for="location" class="form-label">สถานที่</label>
+                <select class="form-select" id="location" required>
+                    <option value="1st">1st</option>
+                    <option value="3rd">3rd</option>
+                    <option value="Faulty">Faulty</option>
+                </select>
+            </div>
+            
+            <div class="mb-3">
+                <label for="sub_location" class="form-label">ตำแหน่งย่อย</label>
+                <input type="text" class="form-control" id="sub_location" required>
+            </div>
+            
+            <div class="mb-3">
+                <label for="status" class="form-label">สถานะ</label>
+                <select class="form-select" id="status" required>
+                    <option value="Available">Available</option>
+                    <option value="Used">Used</option>
+                    <option value="Pending Test">Pending Test</option>
+                </select>
+            </div>
+            
+            <div class="mb-3">
+                <label for="health" class="form-label">สุขภาพ</label>
+                <input type="text" class="form-control" id="health" required>
+            </div>
+            
+            <button type="submit" class="btn btn-primary">บันทึก</button>
+        </form>
+    </div>
+    
+    <script>
+        document.getElementById('inventoryForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const token = localStorage.getItem('token');
+            if (!token) {
+                showAlert('กรุณาเข้าสู่ระบบก่อน', 'danger');
+                return;
+            }
+            
+            const inventoryData = {
+                type: document.getElementById('type').value,
+                name_product: document.getElementById('name_product').value,
+                part_number: document.getElementById('part_number').value,
+                serial_number: document.getElementById('serial_number').value,
+                location: document.getElementById('location').value,
+                sub_location: document.getElementById('sub_location').value,
+                status: document.getElementById('status').value,
+                health: document.getElementById('health').value
+            };
+            
+            try {
+                const response = await fetch('http://localhost:8000/inventory', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${token}`
+                    },
+                    body: JSON.stringify(inventoryData)
+                });
+                
+                const data = await response.json();
+                
+                if (response.ok) {
+                    showAlert('เพิ่มข้อมูลสำเร็จ', 'success');
+                    document.getElementById('inventoryForm').reset();
+                } else {
+                    showAlert(`เกิดข้อผิดพลาด: ${data.detail}`, 'danger');
+                }
+            } catch (error) {
+                showAlert(`เกิดข้อผิดพลาด: ${error.message}`, 'danger');
+            }
+        });
+        
+        function showAlert(message, type) {
+            const alertContainer = document.getElementById('alert-container');
+            alertContainer.innerHTML = `
+                <div class="alert alert-${type} alert-dismissible fade show" role="alert">
+                    ${message}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            `;
+        }
+    </script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html> 
