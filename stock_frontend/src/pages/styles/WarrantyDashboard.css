@@ -1,0 +1,45 @@
+/* แถบ Search มุมขวา */
+.search-bar {
+  display: flex;
+  justify-content: flex-end; /* ชิดขวา */
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.search-bar input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.search-bar button {
+  background-color: #ffa500;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.search-bar button:hover {
+  background-color: #e69500;
+}
+
+/* ตาราง */
+.warranty-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.warranty-table th,
+.warranty-table td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: left;
+}
+
+.warranty-table th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}

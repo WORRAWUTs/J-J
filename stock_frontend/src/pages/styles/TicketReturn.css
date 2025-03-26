@@ -1,0 +1,100 @@
+/* กล่องครอบเนื้อหา Return */
+.return-box {
+  width: 500px; /* กำหนดความกว้างกล่อง */
+  margin: 20px auto; /* จัดกึ่งกลางแนวนอน, มี margin-top/bottom = 20px */
+  border: 1px solid #ccc;
+  padding: 20px;
+  background-color: #fff;
+}
+
+.return-form {
+  margin-top: 20px;
+}
+
+.return-form label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.return-form input[type="text"] {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.condition-bar {
+  display: flex;
+  gap: 20px; /* ระยะห่างระหว่าง radio */
+  margin-bottom: 15px;
+}
+
+.next-button {
+  background-color: #ffa500;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.next-button:hover {
+  background-color: #e69500;
+}
+
+.ticket-info-row {
+  display: flex; /* จัดวางแนวนอน */
+  gap: 16px; /* ระยะห่างระหว่าง <span> แต่ละตัว */
+  align-items: center; /* จัดให้อยู่กึ่งกลางแนวตั้ง */
+  /* ถ้าต้องการให้อยู่กึ่งกลางแนวนอนภายใน container ให้ใช้ justify-content: center; */
+}
+
+.resizable-textarea {
+  width: 300px; /* ให้กินเต็มความกว้าง container */
+  min-height: 10px; /* กำหนดความสูงขั้นต่ำ */
+  resize: both; /* หรือ resize: vertical; ถ้าต้องการให้ขยายเฉพาะแนวตั้ง */
+  overflow: auto; /* ให้ scrollbar ปรากฏเมื่อเนื้อหาเกิน */
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Popup overlay */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* ฉากหลังดำโปร่ง */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+/* Popup content */
+.popup-content {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  width: 300px; /* หรือปรับตามต้องการ */
+  text-align: center;
+}
+
+.add-button {
+  background-color: #ffa500;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  margin-top: 20px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.add-button:hover {
+  background-color: #e69500;
+}

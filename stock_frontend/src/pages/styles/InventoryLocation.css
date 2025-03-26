@@ -1,0 +1,34 @@
+/* จัดลิงก์ 1st, 3rd, Faulty */
+.location-links {
+  display: flex;
+  justify-content: center; /* กึ่งกลางแนวนอน */
+  align-items: center;
+  gap: 60px; /* ระยะห่างระหว่างลิงก์ */
+  margin-top: 200px;
+}
+
+.location-link {
+  text-decoration: none;
+  color: #333;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.location-link:hover {
+  color: #ffa500;
+}
+
+.location-link:not(:last-child) {
+  margin-right: 60px; /* เว้นระยะ */
+  position: relative;
+}
+.location-link:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  right: -59px; /* ขยับตามระยะ */
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 30px;
+  background-color: #ffa500;
+}

@@ -1,0 +1,83 @@
+/* ดัน search bar ไปขวา */
+.search-bar {
+  margin-left: auto;
+  display: flex;
+  gap: 8px;
+}
+
+.search-bar input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.search-bar button {
+  background-color: #ffa500;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.search-bar button:hover {
+  background-color: #e69500;
+}
+
+/* รายการแจ้งเตือน */
+.notification-list {
+  margin-top: 10px;
+}
+
+/* หัววันที่ เช่น Today, Yesterday */
+.notification-date {
+  font-size: 18px;
+  margin: 20px 0 10px 0;
+  color: #555;
+}
+
+/* กล่องแจ้งเตือนแต่ละอัน */
+.notification-item {
+  background-color: #f2f2f2; /* สีพื้น */
+  border-radius: 12px;
+  padding: 10px 15px;
+  margin-bottom: 10px;
+  position: relative;
+  display: inline-block; /* ให้ดูเหมือน bubble ทางซ้าย */
+  max-width: 60%; /* ถ้าต้องการให้ไม่เกิน 60% กว้างจอ */
+}
+
+/* ข้อความ */
+.notification-message {
+  font-size: 14px;
+  color: #333;
+  margin-right: 50px; /* เผื่อ space ให้ time */
+}
+
+/* ลิงก์ click here */
+.notification-link {
+  color: #ffa500;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.notification-link:hover {
+  color: #e69500;
+}
+
+/* เวลาแจ้งเตือน อยู่มุมขวาของ bubble */
+.notification-time {
+  position: absolute;
+  right: 10px;
+  bottom: 5px;
+  font-size: 12px;
+  color: #999;
+}
+
+.top-bar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}

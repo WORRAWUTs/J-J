@@ -1,0 +1,23 @@
+.ticket-inprogress-box {
+  border: 1px solid #ccc;
+  padding: 20px;
+  width: 1300px; /* ปรับตามต้องการ */
+  background-color: #fff;
+}
+
+.ticket-inprogress-box p {
+  margin-bottom: 8px;
+}
+
+.ticket-row-container {
+  display: flex; /* จัด layout แบบ flex */
+  justify-content: center; /* จัดให้อยู่กึ่งกลางแนวนอน */
+  align-items: center; /* จัดให้อยู่กึ่งกลางแนวตั้ง */
+  gap: 40px; /* ระยะห่างระหว่างกล่องซ้ายขวา */
+  margin-top: 20px;
+}
+
+.start-info,
+.current-info {
+  text-align: center; /* จัดข้อความกึ่งกลางในกล่องแต่ละฝั่ง */
+}

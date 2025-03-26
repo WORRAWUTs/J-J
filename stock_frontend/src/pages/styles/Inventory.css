@@ -1,0 +1,35 @@
+.inventory-links {
+  display: flex;
+  justify-content: center; /* จัดให้อยู่กลางแนวนอน */
+  align-items: center;
+  gap: 60px; /* ระยะห่างระหว่างลิงก์ */
+  margin-top: 200px;
+}
+
+.inventory-link {
+  text-decoration: none;
+  color: #333;
+  font-size: 20px;
+  font-weight: bold;
+  position: relative;
+  /* ถ้าต้องการเส้นแบ่งสีส้มตรงกลางอาจใช้ ::after หรือ border-right */
+}
+
+.inventory-link:hover {
+  color: #ffa500; /* เปลี่ยนสีเวลา hover */
+}
+
+.inventory-link:not(:last-child) {
+  margin-right: 60px; /* เว้นระยะ */
+  position: relative;
+}
+.inventory-link:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  right: -60px; /* ขยับตามระยะ */
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 30px;
+  background-color: #ffa500;
+}

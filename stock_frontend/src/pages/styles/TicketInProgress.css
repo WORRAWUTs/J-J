@@ -1,0 +1,38 @@
+.search-bar {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 20px;
+}
+
+.search-bar input {
+  width: 200px;
+  padding: 8px;
+  margin-right: 8px;
+}
+
+.ticket-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.ticket-table th,
+.ticket-table td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: center;
+}
+
+.ticket-table th {
+  background-color: #f2f2f2;
+}
+
+.link-action {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.link-action:hover {
+  text-decoration: underline;
+}

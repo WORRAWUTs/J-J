@@ -1,0 +1,162 @@
+/* แถบด้านบน: Search + Add part */
+.top-bar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.search-container {
+  display: flex;
+  gap: 5px;
+}
+
+.add-part-btn {
+  background-color: #ffa500;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.add-part-btn:hover {
+  background-color: #e69500;
+}
+
+/* ตาราง Parts */
+.parts-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.parts-table th,
+.parts-table td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: center;
+}
+
+.parts-table th {
+  background-color: #f2f2f2;
+}
+
+/* Popup Overlay */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999; /* อยู่ด้านบน */
+}
+
+/* กล่อง Popup */
+.popup-content {
+  background-color: #fff;
+  padding: 20px 30px;
+  border-radius: 8px;
+  width: 350px; /* ปรับขนาดได้ตามต้องการ */
+  position: relative; /* ไว้สำหรับปุ่ม Close ถ้าวาง absolute */
+  text-align: left; /* ชิดซ้าย */
+}
+
+.popup-content h2 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* ฟอร์มแถวๆ */
+.form-row {
+  display: flex; /* จัด label กับ input/ select ในบรรทัดเดียวกัน */
+  align-items: center; /* จัดแนวกลางแนวตั้ง */
+  margin-bottom: 15px; /* เว้นช่องว่างระหว่างแถว */
+}
+
+.form-row label {
+  width: 120px; /* ความกว้างของ label */
+  margin-right: 10px; /* ระยะห่างระหว่าง label กับ input */
+  font-weight: bold; /* ตัวหนา */
+  text-align: left; /* ชิดซ้าย (ค่าปกติ) */
+}
+
+.form-row input,
+.form-row select {
+  flex: 1; /* ขยายเต็มพื้นที่ที่เหลือ */
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* แถวปุ่มด้านล่าง */
+.button-row {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+/* ปุ่ม Close (X) ตำแหน่งมุมขวาบนของ popup */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+/* ตัวอย่างสไตล์ปุ่มภายใน Popup */
+.popup-content button {
+  background-color: #ffa500;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.popup-content button:hover {
+  background-color: #e69500;
+}
+
+.close-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px; /* ปรับขนาดตัวอักษร */
+  color: #000; /* สีดำ */
+  cursor: pointer; /* เปลี่ยนเมาส์เป็นรูปมือ */
+  text-decoration: none; /* ไม่ให้มีขีดเส้นใต้ */
+  background: none; /* ไม่ให้มีพื้นหลัง */
+  border: none; /* ไม่ให้มีเส้นขอบ */
+}
+
+.close-icon:hover {
+  color: #666; /* เปลี่ยนสีหรือเอฟเฟ็กต์เมื่อ hover */
+}
+
+/* ปุ่ม Export Excel มุมขวาล่าง */
+.export-excel-btn {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  background-color: #ffa500;
+  color: #fff;
+  border: none;
+  padding: 12px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.export-excel-btn:hover {
+  background-color: #e69500;
+}

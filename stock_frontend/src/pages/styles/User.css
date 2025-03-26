@@ -1,0 +1,95 @@
+/* Search อยู่ขวา (ดันด้วย margin-left: auto) */
+.top-bar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.search-container {
+  margin-left: auto;
+  display: flex;
+  gap: 8px;
+}
+
+.search-container input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.search-container button {
+  background-color: #ffa500;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.search-container button:hover {
+  background-color: #e69500;
+}
+
+/* ลิสต์ผู้ใช้ */
+.user-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* แถวของผู้ใช้แต่ละคน */
+.user-row {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px;
+  gap: 15px;
+}
+
+/* รูปโปรไฟล์ */
+.user-pic {
+  width: 48px;
+  height: 48px;
+  border-radius: 24px;
+  object-fit: cover;
+}
+
+/* ชื่อผู้ใช้ + role */
+.user-name {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+
+  /* ถ้าต้องการให้ปุ่มอยู่กลางๆ แถว 
+       อาจใช้ margin-left: auto ใน user-name ก็ได้
+       หรือจะใช้ justify-content: space-around ด้านล่างก็ได้
+    */
+  /* margin-left: auto; */
+}
+
+/* ส่วนปุ่ม actions */
+.user-actions {
+  /* ถ้าต้องการให้ปุ่มอยู่กลางๆ ในแถว 
+       แบบว่า user-pic + user-name อยู่ซ้าย, ปุ่มอยู่กลาง 
+       อาจใช้ margin-left: auto ตรงนี้
+    */
+  margin-left: auto;
+  display: flex;
+  gap: 10px;
+}
+
+.user-actions button {
+  background-color: #ffa500;
+  color: #fff;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.user-actions button:hover {
+  background-color: #e69500;
+}

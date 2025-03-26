@@ -1,0 +1,36 @@
+.ticket-detail-header {
+  display: flex;
+  justify-content: space-between; /* ให้ Title ซ้าย, Print ขวา */
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+/* ปุ่มหรือลิงก์ Print ด้านขวาบน */
+.print-link {
+  color: #007bff; /* หรือสีอื่นที่ต้องการ */
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+  border: none; /* ถ้าใช้ <button> */
+  background: none; /* ถ้าใช้ <button> */
+  padding: 8px 16px; /* เผื่ออยากให้เป็นปุ่มใหญ่ขึ้น */
+  border-radius: 4px;
+}
+
+.print-link:hover {
+  text-decoration: underline; /* หรือ background-color: #e8e8e8; ถ้าใช้ปุ่ม */
+}
+
+/* กล่องสำหรับแสดงรายละเอียด Ticket */
+.ticket-detail-box {
+  border: 1px solid #ccc;
+  padding: 20px;
+  width: 1300px; /* หรือขนาดที่คุณต้องการ */
+  background-color: #fff;
+}
+
+/* ถ้าต้องการจัดให้รายการข้อความแสดงเป็นคอลัมน์คู่ (ซ้าย-ขวา) 
+   อาจใช้ flex ภายใน ticket-detail-box, แต่ตัวอย่างนี้โชว์เรียงลง */
+.ticket-detail-box p {
+  margin-bottom: 10px;
+}

@@ -1,0 +1,46 @@
+.register-box {
+  border: 1px solid #ccc;
+  padding: 40px;
+  width: 800px; /* กำหนดความกว้างชัดเจน */
+  margin: 50px auto 0 auto; /* จัดกึ่งกลางแนวนอน */
+  background-color: #fff;
+}
+
+/* จัดแต่ละแถวในฟอร์ม */
+.form-row {
+  margin-bottom: 20px;
+  display: flex; /* ให้ label กับ input อยู่ในบรรทัดเดียวกัน (ถ้าต้องการ) */
+  align-items: center;
+}
+
+/* ถ้าอยากให้ label กับ input อยู่คนละบรรทัด
+     ก็ลบ display:flex, align-items: center ออก */
+
+.form-row label {
+  margin-right: 10px;
+  font-weight: normal; /* หรือ bold ตามดีไซน์ */
+}
+
+.form-row input,
+.form-row textarea {
+  flex: 1; /* ให้ input/textarea ขยายเต็มที่ */
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 8px;
+  font-size: 14px;
+}
+
+/* ปุ่ม ADD */
+.add-button {
+  background-color: #ffa500;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 4px;
+}
+
+.add-button:hover {
+  background-color: #e69500;
+}
